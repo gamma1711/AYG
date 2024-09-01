@@ -33,19 +33,6 @@ const u = {
     ipick(max=1, min=0){
         return Math.round(Math.random() * (max - min) + min);
     },
-    writeT(text,x,y){
-        ctx.beginPath();
-// The size is set with the font
-        ctx.font = '25px serif';
-// align position
-        ctx.fillStyle = "yellow";
-        ctx.textAlign = "center"; 
-        ctx.textBaseline = "middle"; 
-// draw text
-        ctx.fillText(text,x,y);
-        ctx.fill();
-        ctx.closePath();}
-};
 
 class Rope{
     constructor(x,y,r,c,z){
