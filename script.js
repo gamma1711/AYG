@@ -1,4 +1,3 @@
-
 "use strict";
 
 let W, H, ctx, ropes,stat,turn;
@@ -33,6 +32,19 @@ const u = {
     ipick(max=1, min=0){
         return Math.round(Math.random() * (max - min) + min);
     },
+    writeT(text,x,y){
+        ctx.beginPath();
+// The size is set with the font
+        ctx.font = '0px serif';
+// align position
+        ctx.fillStyle = "yellow";
+        ctx.textAlign = "center"; 
+        ctx.textBaseline = "middle"; 
+// draw text
+        ctx.fillText(text,x,y);
+        ctx.fill();
+        ctx.closePath();}
+};
 
 class Rope{
     constructor(x,y,r,c,z){
@@ -178,7 +190,6 @@ const init = () => {
     W = ctx.canvas.width = innerWidth;
     H = ctx.canvas.height = innerHeight;
     turn=0;
-    stat=(window.confirm("Want to know the formula?"));
     ropes=[];
     ropes.push(new Rope(W*0.5, H*0.25,1,"hotpink",0.2));
     //ropes.push(new Rope(W*0.25, H*0.25,5,"cyan"));
